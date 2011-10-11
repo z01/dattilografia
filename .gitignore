@@ -1,0 +1,8 @@
+dattilocorso-*.tar.gz
+*~
+*.diff
+*.patch
+*.rej
+*.orig
+.*.swp
+testi.js
