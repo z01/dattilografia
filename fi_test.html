@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+<meta http-equiv="Content-Language" content="it">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Risultato del test di velocità</title>
+<link href="res/estilos.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="document.FormCert.ppm.value=ppm;  document.FormCert.hora_server.value=hora_server;" >
+<script src="res/fer_correu.js" type="text/javascript"></script>
+
+<div id="cont">
+	<div class="contenido">
+<SCRIPT LANGUAGE="javascript" SRC="res/fi_test-encr.js"> </SCRIPT>
+<SCRIPT LANGUAGE="javascript" SRC="res/utils.js"> </SCRIPT>
+<script>
+  var testo={};
+  var a=0;
+</script>
+<SCRIPT LANGUAGE="javascript" SRC="testi.js"> </SCRIPT>
+
+<script>
+
+if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test-ko.html"; } else { 
+
+    document.write("<U><B>"+info["descrizione"]+" (#"+testi+"/"+a+")</B></U><BR>");
+    var texte=testo[testi-1].replace(/\r/g,'').replace(/\n/g,'<br>');
+    document.write("<pre>"+texte+"</pre>");
+
+  document.write("Battute al minuto (CPM): "+ppm+"<br>");
+  document.write("Tempo utilizzato (secondi): "+segons+"<br>");
+  document.write("Numero di errori: "+errors+" ("+perrors+"%)<br><br>");
+
+  var cookie=getCookie();
+  if(!cookie)cookie={};
+  
+  var lastinsert=(cookie['lastinsert']||'');
+  if(lastinsert == calcul_checksum){
+    var upd=0;
+  }else{
+    var upd=1;
+    cookie['lastinsert']=calcul_checksum;
+  }
+
+
+
+
+  cookie['terminati']=(cookie['terminati']||0)+1*upd;
+  cookie['caratteri']=(cookie['caratteri']||0)+longitud2*1*upd;
+  cookie['tempo']=(cookie['tempo']||0)+segons*1*upd;
+  cookie['errori']=(cookie['errori']||0)+errors*1*upd;
+
+  var tests=cookie['test']; if(!tests) { tests={}; cookie['test']=tests; }
+  var curtest=tests[info["id"]]||{};
+
+  curtest['terminati']=(curtest['terminati']||0)+1*upd;
+  curtest['caratteri']=(curtest['caratteri']||0)+longitud2*1*upd;
+  curtest['tempo']=(curtest['tempo']||0)+segons*1*upd;
+  curtest['errori']=(curtest['errori']||0)+errors*1*upd;
+  curtest['ultimo']=(curtest['ultimo']||0);
+  if(testi==curtest['ultimo']*1+1)curtest['ultimo']=testi;
+
+  document.write("Terminati per "+info["descrizione"]+": "+curtest['terminati']); 
+  if(curtest['terminati'] > 0) document.write(" ("+(Math.round(curtest['caratteri']*60/curtest['tempo']))+" CPM - "+(Math.round(curtest['errori']*10000/curtest['caratteri'])/100)+"% errori)");
+  document.write(' <a href="index.html" onclick="javascript:clearCurStat();">Azzera</a><br>');
+
+  document.write("Totali testi terminati: "+cookie['terminati']); 
+  document.write(" ("+(Math.round(cookie['caratteri']*60/cookie['tempo']))+" CPM - "+(Math.round(cookie['errori']*10000/cookie['caratteri'])/100)+"% errori)");
+  document.write(' <a href="index.html" onclick="javascript:setCookie({});">Azzera tutto</a>');
+  document.write("<br><br>");
+
+
+
+
+
+  /*
+  document.write("Totali testi terminati: "+cookie['terminati']+"<br>"); 
+  document.write("Velocità media: "+(Math.round(cookie['caratteri']*60/cookie['tempo']))+" CPM<br>");
+  document.write("Media errori: "+(round(cookie['errori']/cookie['terminati']))+" ("+(round(cookie['errori']*100/cookie['caratteri']))+"%)<br><br>");
+  */
+  /*
+  document.write("Test terminati in questo set ("+info["descrizione"]+"): "+(curtest['terminati'])+"<br>");
+  document.write("Velocità media: "+(Math.round(curtest['caratteri']*60/curtest['tempo']))+" CPM<br>");
+  document.write("Media errori: "+(round(curtest['errori']/curtest['terminati']))+" ("+(round(curtest['errori']*100/curtest['caratteri']))+"%)<br><br>");
+  */
+  function clearCurStat(){ cookie['test'][info["id"]]={};setCookie(cookie);}
+
+  cookie['test'][info["id"]]=curtest;
+  setCookie(cookie);
+}
+
+
+</SCRIPT>
+
+<br />
+
+<script>
+  function resetCookiePos(){
+    cookie['test'][info["id"]]['ultimo']=0;
+    setCookie(cookie);
+  }
+  if (perrors >=3) {
+    document.write("<a href='index.html?"+testi+"' id='linksucc'><b>Ripetere il test</b></a> (consigliato)<br>");
+    if (info["tipo"]=="vari"){
+      document.write("<a href='index.html'>Vai a un'altro test</a><br>");
+    }else{
+      if(curtest['ultimo']<testi) document.write("<a href='index.html?"+(testi*1+1)+"'>Vai a successivo</a><br>");
+      if(curtest['ultimo']>=a){
+	document.write("<h2>Complimenti, hai terminato tutti i test di "+info["descrizione"]+"</h2>");
+      }else{
+	document.write("<a href='index.html'>Vai a nuovo</a><br>");
+      }
+      document.write("<a href='index.html' onclick='javascript:resetCookiePos()'>Comincia da capo</a><br>");
+    }
+  }else{
+    if (info["tipo"]=="vari"){
+      document.write("<a href='index.html' id='linksucc'><b>Vai a un'altro test</b></a><br>");
+    }else{
+      if(curtest['ultimo']>testi) document.write("<a href='index.html?"+(testi*1+1)+"'>Vai a successivo</a><br>");
+      if(curtest['ultimo']>=a){
+	document.write("<h2>Complimenti, hai terminato tutti i test di "+info["descrizione"]+"</h2>");
+      }else{
+	document.write("<a href='index.html' id='linksucc'><b>Vai a nuovo</b></a><br>");
+      }
+      document.write("<a href='index.html' onclick='javascript:resetCookiePos()'>Comincia da capo</a><br>");
+    }
+    document.write("<a href='index.html?"+testi+"'>Ripetere il test</a><br>");
+  }
+
+
+</script>
+
+<br><br>
+
+<script language="javascript">
+
+    var i=testi;
+    if (i>1) {
+      document.write("<a href='index.html?1'><<</a> | ");
+      document.write("<a href='index.html?"+(i-1)+"'><</a> | ");
+    }else{
+      document.write("<< | ");
+      document.write("< | ");
+    }
+
+    document.write("<b><a href='index.html?"+i+"'>#"+i+"</a></b>");
+    if (i<a){
+      i++;
+      document.write(" | <a href='index.html?"+i+"'>></a>");
+      document.write(" | <a href='index.html?"+a+"'>>></a>");
+      i--;
+    }else{
+      document.write(" | >");
+      document.write(" | >>");
+    }
+
+
+    document.getElementById('linksucc').focus();
+
+</script>
+
+
+
+
+
+
+	</div>
+
+	<!-- footer -->
+	<div id="footer">
+		<script language="javascript" type="text/javascript" src="res/footer.js"></script>
+	</div>
+	<!-- end footer -->
+
+</div>
+
+</body>
+</html>

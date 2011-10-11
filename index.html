@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+<title>Test di velocità</title>
+<link href="res/estilos.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body onload="document.getElementById('S1').focus(); escrit_inicial();">
+<script src="res/fer_correu.js" type="text/javascript"></script>
+
+<div id="cont">
+	<div class="contenido">
+
+<SCRIPT LANGUAGE="javascript" SRC="res/encripta.js"> </SCRIPT>
+<SCRIPT LANGUAGE="javascript" SRC="res/utils.js"> </SCRIPT>
+<script>
+  var testo=new Array();
+  var info={"id":0,"tipo":"sconosciuto","default":"casuale","descrizione":"Esercizio generico"};
+  var a=0;
+</script>
+<SCRIPT LANGUAGE="javascript" SRC="testi.js"> </SCRIPT>
+<script>
+  var cookie=getCookie();
+  if(!cookie)cookie={};
+  cookie['terminati']=cookie['terminati']||0;
+  cookie['caratteri']=cookie['caratteri']||0;
+  cookie['tempo']=cookie['tempo']||0;
+  cookie['errori']=cookie['errori']||0;
+  var tests=cookie['test']; if(!tests) { tests={}; cookie['test']=tests; }
+  var curtest=tests[info["id"]]||{};
+  curtest['terminati']=curtest['terminati']||0;
+  curtest['caratteri']=curtest['caratteri']||0;
+  curtest['tempo']=curtest['tempo']||0;
+  curtest['errori']=curtest['errori']||0;
+  curtest['ultimo']=curtest['ultimo']||0;
+  cookie['test'][info["id"]]=curtest;
+
+  setCookie(cookie);
+   document.write("Terminati per "+info["descrizione"]+": "+curtest['terminati']); 
+   if(curtest['terminati'] > 0) {
+     document.write(" ("+(Math.round(curtest['caratteri']*60/curtest['tempo']))+" CPM - "+(Math.round(curtest['errori']*10000/curtest['caratteri'])/100)+"% errori)");
+     document.write(' <a href="index.html" onclick="javascript:clearCurStat();">Azzera</a><br>');
+   }else{
+     document.write('<br>');
+   }
+
+   document.write("Totali testi terminati: "+cookie['terminati']); 
+   document.write(" ("+(Math.round(cookie['caratteri']*60/cookie['tempo']))+" CPM - "+(Math.round(cookie['errori']*10000/cookie['caratteri'])/100)+"% errori)");
+   document.write(' <a href="index.html" onclick="javascript:setCookie({});">Azzera tutto</a>');
+   document.write("<br><br>");
+
+</script>
+
+<SCRIPT>
+var i;
+if (document.URL.indexOf("?")==-1){
+  if(info['default']=="nuovo"){
+    i=curtest['ultimo']*1+1;
+  }else{
+    i=Math.floor(Math.random()*testo.length+1);
+  }
+}else{
+  i=document.URL.substr(document.URL.indexOf("?")+1);
+  if (i=="") if(info['default']=="nuovo"){
+      i=curtest['ultimo']*1+1;
+    }else{
+      i=Math.floor(Math.random()*testo.length+1);
+    }
+}
+var texte=testo[i-1].replace(/\r/g,'').replace(/\n/g,'<br>');
+var hora_servidor="2000-01-01 00:00:00";
+</SCRIPT>
+
+<SCRIPT LANGUAGE="javascript" SRC="res/test-encr.js"> </SCRIPT>
+
+<SCRIPT LANGUAGE="javascript">
+  document.write("<U><B>"+info["descrizione"]+" (#"+i+"/"+a+")</B></U><BR><BR>");
+var testi=i;
+if (i>1) {
+  document.write("<a href='?1'><<</a> | ");
+  document.write("<a href='?"+(i-1)+"'><</a> | ");
+}else{
+  document.write("<< | ");
+  document.write("< | ");
+}
+document.write("<b><a href='?"+i+"'>#"+i+"</a></b>");
+if (i<testo.length){
+  i++;
+  document.write(" | <a href='?"+i+"'>></a>");
+  document.write(" | <a href='?"+testo.length+"'>>></a>");
+  i--;
+}else{
+  document.write(" | >");
+  document.write(" | >>");
+}
+if(info['default']=="casuale"){
+  document.write(" | <a href='index.html'><i>casuale</i></a>");
+}else{
+  document.write(" | <a href='index.html'><i>continua lezioni</i></a>");
+}
+</SCRIPT>
+<br />
+
+<br /><br />
+Digita il seguente testo ...
+<br /><br />
+
+<span id="clock"></span>
+<form  method="POST" id="formul">
+<p><textarea rows="10" id="S1" name="S1"  cols="80" oninput="javascript:checkPasteFF();" onpaste="return false" onKeyDown="CheckKey(event)" onKeyUp="this.value=Comprova_ok(this.value,event)" ;></textarea></p>
+</form>
+
+<!--<input type="button" value="Diminuire la dimensione del carattere" name="dtamano" onclick="d_tamany()">
+<input type="button" value="Aumentare la dimensione del carattere" name="atamano" onclick="a_tamany()">-->
+
+<SCRIPT>
+var paste_utilitzat=0;
+var charCount = document.getElementById("S1").value.length;
+function checkPasteFF(methodToCall) {
+	newCharCount = document.getElementById("S1").value.length;
+	oldCharCount = charCount;	
+	charCount = newCharCount;
+	if(newCharCount - oldCharCount > 1) {
+		paste_utilitzat=1;
+		location="test-ko.html";
+	}
+}
+</SCRIPT>
+
+	</div>
+</div>
+
+
+
+</body>
+</html>
+
