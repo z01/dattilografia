@@ -19,9 +19,13 @@ for COOKIE in $(echo -e $(sqlite3 $COOKIES 'select value from moz_cookies where 
     CARATTERI=$(echo $COOKIE|cut -f3 -d:|cut -f1 -d,)
     TEMPO=$(echo $COOKIE|cut -f4 -d:|cut -f1 -d,)
     ERRORI=$(echo $COOKIE|cut -f5 -d:|cut -f1 -d,)
-    CPM=$[$CARATTERI*60/$TEMPO]
-    PERR=$(echo "scale=2;$ERRORI*100/$CARATTERI"|bc)
-#    echo "Totali: terminati=$TERMINATI ($CPM CPM, $PERR% errori)"
+    if [ "$TERMINATI" != "0" ];then
+      CPM=$[$CARATTERI*60/$TEMPO]
+      PERR=$(echo "scale=2;$ERRORI*100/$CARATTERI"|bc)
+    else
+      CPM=0
+      PERR=0
+    fi
   else
     ID=$(echo $COOKIE|cut -f2 -d\")
     TTEMPO[$ID]=$(echo $COOKIE|cut -f5 -d:|cut -f1 -d,)

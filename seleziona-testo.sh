@@ -1,6 +1,6 @@
 #!/bin/bash
 FILE=`./statistiche.sh`
-if [ ! -z "$FILE" ];then
+if [ -f "$FILE" ];then
   ln -sf ${FILE[$SCELTA]} testi.js
   firefox index.html&
 fi
