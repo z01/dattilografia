@@ -26,6 +26,10 @@ cat $CONTENT|grep -v /$|while read P F;do
   cp $CWD/$F $DEST/$F
   chmod $P $DEST/$F
 done
+
+echo "copying texts"
+cp $CWD/testi/t-*.js $DEST/testi/
+cp $CWD/testi/corsi/t-*.js $DEST/testi/corsi/
     
 echo "generating file testi.js"
 cp $CWD/testi/t-benvenuto.js $DEST/testi.js
