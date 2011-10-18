@@ -77,16 +77,40 @@ function troba_segons(str)
 function troba_hora_server(str)
 {
 	theleft = str.indexOf("h=") + 2;
-	theright = str.lastIndexOf("&");
+	theright = str.indexOf("&t=");
 	return(str.substring(theleft, theright));
 }
 
 function troba_testo(str)
 {
 	theleft = str.indexOf("t=") + 2;
+	theright = str.indexOf("&a=");
+	return(str.substring(theleft, theright));
+}
+function troba_allerr(str)
+{
+	theleft = str.indexOf("a=") + 2;
 	theright = str.lastIndexOf("&");
 	return(str.substring(theleft, theright));
 }
+function colortext(txt){
+  if(allerrors.length==0){
+    return txt;
+  } else {
+    txtcol='';
+    var lasterr=0;
+    for(var errid=0;errid<allerrors.length;errid++){
+      if(allerrors[errid]>=lasterr){
+	txtcol+=txt.substring(lasterr,allerrors[errid]);
+	lasterr=allerrors[errid]+1;
+	txtcol+='<font color="red">'+txt.substring(allerrors[errid],allerrors[errid]+1)+'</font color>';
+      }
+    }
+  }
+  txtcol+=txt.substring(allerrors[errid-1]+1);
+  return txtcol;
+}
+
 
 var text = document.URL;
 var variables=nomes_variables(text);
@@ -97,6 +121,8 @@ var testi=troba_testo(variables_no_encriptades)
 var errors=troba_errors(variables_no_encriptades)
 var longitud=troba_longitud(variables_no_encriptades)
 var segons=troba_segons(variables_no_encriptades)
+var allerrors=unserialize(desencripta(troba_allerr(variables_no_encriptades)))
+
 var hora_server
 var perrors
 var ppm

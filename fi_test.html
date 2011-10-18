@@ -13,8 +13,8 @@
 
 <div id="cont">
 	<div class="contenido">
-<SCRIPT LANGUAGE="javascript" SRC="res/fi_test-encr.js"> </SCRIPT>
 <SCRIPT LANGUAGE="javascript" SRC="res/utils.js"> </SCRIPT>
+<SCRIPT LANGUAGE="javascript" SRC="res/fi_test-encr.js"> </SCRIPT>
 <script>
   var testo={};
   var a=0;
@@ -26,7 +26,7 @@
 if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test-ko.html"; } else { 
 
     document.write("<U><B>"+info["descrizione"]+" (#"+testi+"/"+a+")</B></U><BR>");
-    var texte=testo[testi-1].replace(/\r/g,'').replace(/\n/g,'<br>');
+    var texte=colortext(testo[testi-1].replace(/\r/g,'').replace(/\n/g,'<br>'));
     document.write("<pre>"+texte+"</pre>");
 
   document.write("Battute al minuto (CPM): "+ppm+"<br>");
@@ -168,11 +168,6 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
 
 	</div>
 
-	<!-- footer -->
-	<div id="footer">
-		<script language="javascript" type="text/javascript" src="res/footer.js"></script>
-	</div>
-	<!-- end footer -->
 
 </div>
 

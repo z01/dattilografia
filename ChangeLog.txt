@@ -1,3 +1,11 @@
 11/10/2011: ver. 1.0
 	Rilascio prima versione stabile
 	Include la gestione delle statistiche e il salvataggio dei progressi
+
+17/10/2011: ver 1.0.1
+	Fixed statistics script.
+	fix t-corso-specializzato.js (CR+LF)
+
+18/10/2011: ver 1.1.0
+	Aggiunta colorazione errori e statistiche in tempo reale
+
