@@ -9,3 +9,8 @@
 18/10/2011: ver 1.1.0
 	Aggiunta colorazione errori e statistiche in tempo reale
 
+19/10/2011: ver 1.1.1
+	fix t-corso-principiante.js
+	Aggiunto testo t-promessi-sposi.js
+	Aggiunto corso t-corso-italiano*
+
