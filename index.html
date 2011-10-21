@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
+<script src="res/testpage.js"> </SCRIPT>
 <title>Test di velocità</title>
 <link href="res/estilos.css" rel="stylesheet" type="text/css" />
 </head>
@@ -12,15 +13,13 @@
 <div id="cont">
 	<div class="contenido">
 
-<SCRIPT LANGUAGE="javascript" SRC="res/encripta.js"> </SCRIPT>
-<SCRIPT LANGUAGE="javascript" SRC="res/utils.js"> </SCRIPT>
 <script>
   var testo=new Array();
   var info={"id":0,"tipo":"sconosciuto","default":"casuale","descrizione":"Esercizio generico"};
   var a=0;
 </script>
-<SCRIPT LANGUAGE="javascript" SRC="testi.js"> </SCRIPT>
 <script>
+  include("testi.js");
   var cookie=getCookie();
   if(!cookie)cookie={};
   cookie['terminati']=cookie['terminati']||0;
@@ -111,9 +110,6 @@ errori: <span id="errs">0 (0%)</span> - CPM: <span id="cpm">0</span>
 <form  method="POST" id="formul">
 <p><textarea rows="10" id="S1" name="S1"  cols="80" oninput="javascript:checkPasteFF();" onpaste="return false" onKeyDown="CheckKey(event)" onKeyUp="this.value=Comprova_ok(this.value,event)" ;></textarea></p>
 </form>
-
-<!--<input type="button" value="Diminuire la dimensione del carattere" name="dtamano" onclick="d_tamany()">
-<input type="button" value="Aumentare la dimensione del carattere" name="atamano" onclick="a_tamany()">-->
 
 <SCRIPT>
 var paste_utilitzat=0;

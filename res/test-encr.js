@@ -64,7 +64,7 @@ function Comprova_ok(a,event) {
   if (punter==0) hora_inici=CalculaHora(hora_inici);
   if (texte.substr(punter,4)=="<br>") {
     if (valor_tecla_event != 13) {
-      if (vigila!=1) errors=errors+1;
+      if (vigila!=1) errors++;
       a=a.substr(0,contador_real);
       vigila=0;
     } else {
@@ -93,7 +93,8 @@ function Comprova_ok(a,event) {
       inici_text_no_marcat=texte.substring(0,cursor_pos_color);
       text_marcat=texte.substring(cursor_pos_color, cursor_pos_color+num_salt);
       fi_text_no_marcat=texte.substring(cursor_pos_color+num_salt,longitud);
-      texte_colors='<FONT FACE="courier new,courier"><FONT SIZE='+tamano+'>'+colortext(inici_text_no_marcat)+'<FONT COLOR="red"><U>'+text_marcat+'</FONT COLOR></U>'+fi_text_no_marcat+'</FONT SIZE></FONT FACE>';
+      texte_colors=colortext(inici_text_no_marcat,text_marcat,fi_text_no_marcat);
+
       if (document.all) document.all.clock.innerHTML=texte_colors;
       else if (document.getElementById) document.getElementById("clock").innerHTML=texte_colors;
     }
@@ -101,26 +102,26 @@ function Comprova_ok(a,event) {
     if (tecla!=texte.substr(punter,1)) {
       if (plataforma=="mac") {
         if(nav=="Safari") {
-          if (vigila!=1) errors=errors+1;
+          if (vigila!=1) errors++;
           a=a.substr(0,contador_real);
           vigila=0;
         } else {
           if(nav=="Firefox") {
             if (!((event.keyCode==0) || (event.keyCode==192) || (event.keyCode==16))) {
-              if (vigila!=1) errors=errors+1;
+              if (vigila!=1) errors++;
               a=a.substr(0,contador_real);
               vigila=0;
             }
           } else {
             if(nav=="Netscape") {
               if (!((event.keyCode==0) || (event.keyCode==192))) {
-                if (vigila!=1) errors=errors+1;
+                if (vigila!=1) errors++;
                 a=a.substr(0,contador_real);
                 vigila=0;
               }
             } else { // qualsevol altre navegador (ie, opera, ...) - no provat
               if (!((event.keyCode==0) || (event.keyCode==192))) {
-                if (vigila!=1) errors=errors+1;
+                if (vigila!=1) errors++;
                 a=a.substr(0,contador_real);
                 vigila=0;
               }
@@ -129,22 +130,22 @@ function Comprova_ok(a,event) {
         }
       } else { // no mac
         if (vigila!=1) {
-          if (navigator.appName != 'Netscape') { errors=errors+1; }
+          if (navigator.appName != 'Netscape') errors++;
           else { 
-            if ( (navigator.platform == 'Win32') || (navigator.platform == 'Win64') || (navigator.platform == 'Windows') ) errors=errors+1;
-            else if (tecla!=0) errors=errors+1;
+            if ( (navigator.platform == 'Win32') || (navigator.platform == 'Win64') || (navigator.platform == 'Windows') ) errors++;
+            else if (tecla!=0) errors++;
           }        
         }
         a=a.substr(0,contador_real);
         vigila=0;
       }
       if(tmperrors!=errors) {
-        allerrors[tmperrors]=punter;
-        document.getElementById("errs").innerHTML=errors+" ("+(round(errors*100/longitud))+"%)";
+	allerrors[tmperrors]=punter;
+	document.getElementById("errs").innerHTML=errors+" ("+(round(errors*100/longitud))+"%)";
       }
     } else {
-      punter=punter+1;
-      contador_real=contador_real+1;
+      punter++;
+      contador_real++;
       if(texte.substring(cursor_pos_color+num_salt_ini,cursor_pos_color+num_salt_ini+4)=='<br>') {  
         num_salt=num_salt_ini+3;
         final_linea=1;
@@ -156,7 +157,8 @@ function Comprova_ok(a,event) {
       inici_text_no_marcat=texte.substring(0,cursor_pos_color);
       text_marcat=texte.substring(cursor_pos_color, cursor_pos_color+num_salt);
       fi_text_no_marcat=texte.substring(cursor_pos_color+num_salt,longitud);
-      texte_colors='<FONT FACE="courier new,courier"><FONT SIZE='+tamano+'>'+colortext(inici_text_no_marcat)+'<FONT COLOR="red"><U>'+text_marcat+'</FONT COLOR></U>'+fi_text_no_marcat+'</FONT SIZE></FONT FACE>';
+      texte_colors=colortext(inici_text_no_marcat,text_marcat,fi_text_no_marcat);
+
       if (document.all) document.all.clock.innerHTML=texte_colors;
       else if (document.getElementById) document.getElementById("clock").innerHTML=texte_colors; 
     }
@@ -192,38 +194,26 @@ function Calcula(Operacion) {
   NuevoNumero = true;
 }
 
-function colortext(txt){
+function colortext(inici_text_no_marcat,text_marcat,fi_text_no_marcat){
   if(allerrors.length==0){
-    return txt;
+    inici_text=inici_text_no_marcat;
   } else {
-    txtcol='';
+    inici_text='';
     var lasterr=0;
     for(var errid=0;errid<allerrors.length;errid++){
       if(allerrors[errid]>=lasterr){
-	txtcol+=txt.substring(lasterr,allerrors[errid]);
+	inici_text+=inici_text_no_marcat.substring(lasterr,allerrors[errid]);
 	lasterr=allerrors[errid]+1;
-	txtcol+='<font color="#bfbf00">'+txt.substring(allerrors[errid],allerrors[errid]+1)+'</font color>';
+	inici_text+='<font color="#bfbf00">'+inici_text_no_marcat.substring(allerrors[errid],allerrors[errid]+1)+'</font color>';
       }
     }
+    inici_text+=inici_text_no_marcat.substring(allerrors[errid-1]+1);
   }
-  txtcol+=txt.substring(allerrors[errid-1]+1);
+  txtcol = '<FONT FACE="courier new,courier">';
+  txtcol+= '<FONT SIZE='+tamano+'>'+inici_text+'<FONT COLOR="red">';
+  txtcol+= '<U>'+text_marcat+'</FONT COLOR></U>';
+  txtcol+= fi_text_no_marcat+'</FONT SIZE></FONT FACE>';
   return txtcol;
-}
-function d_tamany() {
-  if (tamano>1) {
-    tamano=tamano-1;
-    texte_colors='<FONT FACE="courier new,courier"><FONT SIZE='+tamano+'>'+colortext(inici_text_no_marcat)+'<FONT COLOR="red"><U>'+text_marcat+'</FONT COLOR></U>'+fi_text_no_marcat+'</FONT SIZE></FONT FACE>';
-    if (document.all) document.all.clock.innerHTML=texte_colors;
-    else if (document.getElementById) document.getElementById("clock").innerHTML=texte_colors; 
-  }
-}
-function a_tamany() {
-  if (tamano<8) {
-    tamano=tamano+1;
-    texte_colors='<FONT FACE="courier new,courier"><FONT SIZE='+tamano+'>'+colortext(inici_text_no_marcat)+'<FONT COLOR="red"><U>'+text_marcat+'</FONT COLOR></U>'+fi_text_no_marcat+'</FONT SIZE></FONT FACE>';
-    if (document.all) document.all.clock.innerHTML=texte_colors;
-    else if (document.getElementById) document.getElementById("clock").innerHTML=texte_colors;
-  }
 }
 var allerrors=new Array();
 var valor_anterior="";
@@ -273,4 +263,5 @@ longitud=texte.length;
 inici_text_no_marcat=texte.substring(0,cursor_pos_color-1);
 text_marcat=texte.substring(cursor_pos_color, cursor_pos_color+num_salt);
 fi_text_no_marcat=texte.substring(cursor_pos_color+num_salt,longitud);
-texte_colors='<FONT FACE="courier new,courier"><FONT SIZE='+tamano+'>'+colortext(inici_text_no_marcat)+'<FONT COLOR="red"><U>'+text_marcat+'</FONT COLOR></U>'+fi_text_no_marcat+'</FONT SIZE></FONT FACE>';
+texte_colors=colortext(inici_text_no_marcat,text_marcat,fi_text_no_marcat);
+
