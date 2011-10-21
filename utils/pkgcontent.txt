@@ -19,4 +19,3 @@
 644 res/test-encr.js
 644 res/encripta.js
 644 res/fi_test-encr.js
-644 res/fer_correu.js
