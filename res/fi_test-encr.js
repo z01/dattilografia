@@ -1,102 +1,74 @@
-<!--
-
-function desencripta(Str_Message)
-{
-	Len_Str_Message=Str_Message.length;
-	Str_Encrypted_Message="";
-	for (Position = 0 ; Position<Len_Str_Message ; Position+=3)
-	{
-		cadena_num = Str_Message.substring(Position, Position+3);
-		Ascii_Num_Byte = 999-cadena_num;
-	        caracter=String.fromCharCode(Ascii_Num_Byte);
-		Str_Encrypted_Message=Str_Encrypted_Message+caracter;
-	} 
-	return(Str_Encrypted_Message);
+function desencripta(Str_Message) {
+  Len_Str_Message=Str_Message.length;
+  Str_Encrypted_Message="";
+  for (Position = 0 ; Position<Len_Str_Message ; Position+=3) {
+    cadena_num = Str_Message.substring(Position, Position+3);
+    Ascii_Num_Byte = 999-cadena_num;
+    caracter=String.fromCharCode(Ascii_Num_Byte);
+    Str_Encrypted_Message=Str_Encrypted_Message+caracter;
+  } 
+  return(Str_Encrypted_Message);
 }
-
-function nomes_variables(str)
-{
-	theleft = str.indexOf("?") + 3;
-	theright = str.indexOf("&w=");
-	newstr=str.substring(theleft,theright);
-	return(newstr);
+function nomes_variables(str) {
+  theleft = str.indexOf("?") + 3;
+  theright = str.indexOf("&w=");
+  newstr=str.substring(theleft,theright);
+  return(newstr);
 }
-
-function checksum_cadena(str)
-{
-	theleft = str.indexOf("w=") + 2;
-	theright = str.lastIndexOf("&");
-	return(str.substring(theleft, theright));
+function checksum_cadena(str) {
+  theleft = str.indexOf("w=") + 2;
+  theright = str.lastIndexOf("&");
+  return(str.substring(theleft, theright));
 }
-
-function calcula_checksum(Str_Message)
-{
-
-	var cadena;
-	longitud=Str_Message.length;
-	suma=0;
-	for (Position = 0 ; Position<longitud ; Position++)
-	{
-		codi = Str_Message.substring(Position, Position+1); 
-		suma = suma+Str_Message.charCodeAt(Position);
-	} 
-	cadena=""+suma;
-
-	return(cadena);
-
+function calcula_checksum(Str_Message) {
+  var cadena;
+  longitud=Str_Message.length;
+  suma=0;
+  for (Position = 0 ; Position<longitud ; Position++) {
+    codi = Str_Message.substring(Position, Position+1); 
+    suma = suma+Str_Message.charCodeAt(Position);
+  } 
+  cadena=""+suma;
+  return(cadena);
 }
-
-function round (n)
-{
-	n = Math.round(n * 100) / 100;
-	n = (n + 0.001) + '';
-	return n.substring(0, n.indexOf('.') + 3);
+function round (n) {
+  n = Math.round(n * 100) / 100;
+  n = (n + 0.001) + '';
+  return n.substring(0, n.indexOf('.') + 3);
 }
-
-function troba_errors(str)
-{
-	theleft = str.indexOf("x=") + 2;
-	theright = str.indexOf("&l=");
-	return(str.substring(theleft, theright));
+function troba_errors(str) {
+  theleft = str.indexOf("x=") + 2;
+  theright = str.indexOf("&l=");
+  return(str.substring(theleft, theright));
 }
-
-function troba_longitud(str)
-{
-	theleft = str.indexOf("l=") + 2;
-	theright = str.indexOf("&s=");
-	return(str.substring(theleft, theright));
+function troba_longitud(str) {
+  theleft = str.indexOf("l=") + 2;
+  theright = str.indexOf("&s=");
+  return(str.substring(theleft, theright));
 }
-
-function troba_segons(str)
-{
-	theleft = str.indexOf("s=") + 2;
-	theright = str.indexOf("&h=");
-	return(str.substring(theleft, theright));
+function troba_segons(str) {
+  theleft = str.indexOf("s=") + 2;
+  theright = str.indexOf("&h=");
+  return(str.substring(theleft, theright));
 }
-
-function troba_hora_server(str)
-{
-	theleft = str.indexOf("h=") + 2;
-	theright = str.indexOf("&t=");
-	return(str.substring(theleft, theright));
+function troba_hora_server(str) {
+  theleft = str.indexOf("h=") + 2;
+  theright = str.indexOf("&t=");
+  return(str.substring(theleft, theright));
 }
-
-function troba_testo(str)
-{
-	theleft = str.indexOf("t=") + 2;
-	theright = str.indexOf("&a=");
-	return(str.substring(theleft, theright));
+function troba_testo(str) {
+  theleft = str.indexOf("t=") + 2;
+  theright = str.indexOf("&a=");
+  return(str.substring(theleft, theright));
 }
-function troba_allerr(str)
-{
-	theleft = str.indexOf("a=") + 2;
-	theright = str.lastIndexOf("&");
-	return(str.substring(theleft, theright));
+function troba_allerr(str) {
+  theleft = str.indexOf("a=") + 2;
+  theright = str.lastIndexOf("&");
+  return(str.substring(theleft, theright));
 }
 function colortext(txt){
-  if(allerrors.length==0){
-    return txt;
-  } else {
+  if(allerrors.length==0) return txt;
+  else {
     txtcol='';
     var lasterr=0;
     for(var errid=0;errid<allerrors.length;errid++){
@@ -150,4 +122,3 @@ if (mes<10) mes="0"+mes;
 var ano=fecha.getFullYear();
 
 var fecha_test=ano+mes+diames;
--->
