@@ -140,8 +140,12 @@ function Comprova_ok(a,event) {
         vigila=0;
       }
       if(tmperrors!=errors) {
-	allerrors[tmperrors]=punter;
-	document.getElementById("errs").innerHTML=errors+" ("+(round(errors*100/longitud))+"%)";
+	if(lastposerror==punter) errors--;
+	else {
+	  lastposerror=punter;
+	  allerrors[tmperrors]=punter;
+	  document.getElementById("errs").innerHTML=errors+" ("+(round(errors*100/longitud))+"%)";
+	}
       }
     } else {
       punter++;
@@ -216,6 +220,7 @@ function colortext(inici_text_no_marcat,text_marcat,fi_text_no_marcat){
   return txtcol;
 }
 var allerrors=new Array();
+var lastposerror=0;
 var valor_anterior="";
 var total = 0;
 var UltimaOperacion = "+" ;
