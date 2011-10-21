@@ -4,10 +4,6 @@
 644 test-ko.html
 644 VERSION
 644 README.TXT
-755 imagenes/
-644 imagenes/amigo.jpg
-644 imagenes/comi.gif
-644 imagenes/bg.jpg
 755 dattilografa.sh
 755 statistiche.sh
 644 index.html
