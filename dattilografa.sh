@@ -3,7 +3,7 @@ CWD=`pwd`
 TESTO=$CWD/testi.js
 
 if [ ! -e "$TESTO" ];then
-  ./statistiche.sh
+  ./seleziona-testo.sh
   exit
 fi
 if [ ! -e "$TESTO" ];then

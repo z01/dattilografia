@@ -79,14 +79,14 @@ Quando vidi costui nel gran diserto,\n\
 
 testo[a++]='Rispuosemi: "Non omo, omo già fui,\n\
 e li parenti miei furon lombardi,\n\
-mantoani per patrïa ambedui.\n\
+mantoani per patria ambedui.\n\
 Nacqui sub Iulio, ancor che fosse tardi,\n\
 e vissi a Roma sotto \'l buono Augusto\n\
 nel tempo de li dèi falsi e bugiardi.';
 
 testo[a++]='Poeta fui, e cantai di quel giusto\n\
 figliuol d\'Anchise che venne di Troia,\n\
-poi che \'l superbo Ilïón fu combusto.\n\
+poi che \'l superbo Iliòn fu combusto.\n\
 Ma tu perché ritorni a tanta noia?\n\
 perché non sali il dilettoso monte\n\
 ch\'è principio e cagion di tutta gioia?".';
@@ -105,7 +105,7 @@ Vedi la bestia per cu\' io mi volsi;\n\
 aiutami da lei, famoso saggio,\n\
 ch\'ella mi fa tremar le vene e i polsi".';
 
-testo[a++]='"A te convien tenere altro vïaggio",\n\
+testo[a++]='"A te convien tenere altro viaggio",\n\
 rispuose, poi che lagrimar mi vide,\n\
 "se vuo\' campar d\'esto loco selvaggio;\n\
 ché questa bestia, per la qual tu gride,\n\
@@ -120,7 +120,7 @@ e più saranno ancora, infin che \'l veltro\n\
 verrà, che la farà morir con doglia.';
 
 testo[a++]='Questi non ciberà terra né peltro,\n\
-ma sapïenza, amore e virtute,\n\
+ma sapienza, amore e virtute,\n\
 e sua nazion sarà tra feltro e feltro.\n\
 Di quella umile Italia fia salute\n\
 per cui morì la vergine Cammilla,\n\
