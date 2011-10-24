@@ -21,10 +21,10 @@ fieldset{
 }
 a:link {
 	color: #0099FF;
-	text-decoration: underline;
+	text-decoration: none;
 }
 a:visited {
-	text-decoration: underline;
+	text-decoration: none;
 	color: #0099FF;
 }
 a:hover {
@@ -32,7 +32,7 @@ a:hover {
 	color: #FF9900;
 }
 a:active {
-	text-decoration: underline;
+	text-decoration: none;
 	color: #0099FF;
 }
 img{

@@ -1,5 +1,3 @@
-info={"id":9,"tipo":"vari","default":"casuale","descrizione":"Mix di linux"};
-
 testo[a++]='Linux è una famiglia di Sistemi Operativi di tipo Unix-like aventi\n\
 la caratteristica comune di utilizzare come nucleo il kernel Linux.\n\
 Molte importanti società come: IBM, Sun Microsystems, Hewlett-Packard,\n\

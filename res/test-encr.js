@@ -176,12 +176,6 @@ function Comprova_ok(a,event) {
   return(a)
 }
 
-function round (n) {
-  n = Math.round(n * 100) / 100;
-  n = (n + 0.001) + '';
-  return n.substring(0, n.indexOf('.') + 3);
-}
-
 function CalculaHora(a) {
   var d = new Date();
   a=d.getHours()*3600+d.getMinutes()*60+d.getSeconds();

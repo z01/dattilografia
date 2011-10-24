@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
-<script src="res/testpage.js"> </SCRIPT>
 <title>Test di velocità</title>
 <link href="res/estilos.css" rel="stylesheet" type="text/css" />
 </head>
@@ -13,43 +12,10 @@
 <div id="cont">
 	<div class="contenido">
 
-<script>
-  var testo=new Array();
-  var info={"id":0,"tipo":"sconosciuto","default":"casuale","descrizione":"Esercizio generico"};
-  var a=0;
-</script>
-<script>
-  include("testi.js");
-  var cookie=getCookie();
-  if(!cookie)cookie={};
-  cookie['terminati']=cookie['terminati']||0;
-  cookie['caratteri']=cookie['caratteri']||0;
-  cookie['tempo']=cookie['tempo']||0;
-  cookie['errori']=cookie['errori']||0;
-  var tests=cookie['test']; if(!tests) { tests={}; cookie['test']=tests; }
-  var curtest=tests[info["id"]]||{};
-  curtest['terminati']=curtest['terminati']||0;
-  curtest['caratteri']=curtest['caratteri']||0;
-  curtest['tempo']=curtest['tempo']||0;
-  curtest['errori']=curtest['errori']||0;
-  curtest['ultimo']=curtest['ultimo']||0;
-  cookie['test'][info["id"]]=curtest;
-
-  setCookie(cookie);
-   document.write("Terminati per "+info["descrizione"]+": "+curtest['terminati']); 
-   if(curtest['terminati'] > 0) {
-     document.write(" ("+(Math.round(curtest['caratteri']*60/curtest['tempo']))+" CPM - "+(Math.round(curtest['errori']*10000/curtest['caratteri'])/100)+"% errori)");
-     document.write(' <a href="index.html" onclick="javascript:clearCurStat();">Azzera</a><br>');
-   }else{
-     document.write('<br>');
-   }
-
-   document.write("Totali testi terminati: "+cookie['terminati']); 
-   document.write(" ("+(Math.round(cookie['caratteri']*60/cookie['tempo']))+" CPM - "+(Math.round(cookie['errori']*10000/cookie['caratteri'])/100)+"% errori)");
-   document.write(' <a href="index.html" onclick="javascript:setCookie({});">Azzera tutto</a>');
-   document.write("<br><br>");
-
-</script>
+<script src="res/testpage.js"></SCRIPT>
+<script>initializeCookies();</script>
+<script>getTexts();</script> 
+<script> showStats(); </script>
 
 <SCRIPT>
 var i;
@@ -72,7 +38,7 @@ var hora_servidor="2000-01-01 00:00:00";
 </SCRIPT>
 
 <SCRIPT LANGUAGE="javascript" SRC="res/test-encr.js"> </SCRIPT>
-
+<a href="testi.html">Elenco testi</a><br><br>
 <SCRIPT LANGUAGE="javascript">
   document.write("<U><B>"+info["descrizione"]+" (#"+i+"/"+a+")</B></U><BR><BR>");
 var testi=i;

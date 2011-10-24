@@ -1,18 +1,9 @@
 Per chi usa linux può usare il comando './dattilografa.sh' per avviare il programma.
 Questo aprirà la index.html in firefox.
-Se non è presente il file "testi.js" lo script provvederà a richiamare './seleziona-testo.sh' 
-per far scegliere un testo.
-Lanciare il comando './seleziona-testo.sh' per cambiare if file di definizione testo.
-
-Per vedere il riassunto delle statistiche invece lanciare './statistiche.sh'
 
 
 
 Per chi usa Windows può aprire index.html con il doppio click.
-Per cambiare il file di definizione testo entrare nella directory 'testi', prendere un file e 
-copiarlo nella directory principale rinominandolo in 'testi.js'.
-
-
 
 
 Nella directory 'testi' e sottodirectory sono disponibili un set di definizione testi.

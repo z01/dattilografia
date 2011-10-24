@@ -1,4 +1,3 @@
-info={"id":3,"tipo":"corso","default":"nuovo","descrizione":"Corso avanzato"};
 testo[a++]="ddd eee ddd eee ded ded ddee ddee sss www sss\r\nwww sws sws ssww ssww aaa qqq aaa qqq aqa aqa\r\naaqq aaqq aaa sss ddd fff qqq www eee rrr tt qa\r\nqa ws ws ed ed er er ew ew we we wq wq q u qu qu\r\nqua qua que que e d ed ed w h wh wh w e we we dew";
 testo[a++]="ede ede efe efe ese ese ede ede wsw wsw wdw wdw\r\nwaw waw wsw wsw qaq qaq qsq qsq qdq qdq qaq qaq\r\nqua qua quart quart que que queen queen equal\r\nequal aqua aqua wee wee weed weed wear wear fear\r\nfear what what why why when when where where";
 testo[a++]="wee fee see me few mew sew hew raw jaw was saw\r\nrest west jest best was saw tea lea sea knee weak\r\nweek new knew rest quest alm qualm sleek geek\r\ngreek week deck wreck queer leer near deer keel\r\nfeel reelwheel when where fear";

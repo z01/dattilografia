@@ -1,11 +1,10 @@
-info={"id":0,"tipo":"corso","default":"nuovo","descrizione":"Istruzioni per creare un set di testi"};
 //
 // Quì puoi inserire i tuoi testi
 //
 // La sintassi è rigida. Ogni blocco di testo comincia con testo[a++]=' e deve terminare con ';
 // Ogni riga di testo deve cominciare all'inizio della riga e deve terminare con \n\
-// La prima riga del file deve contenere le informazione del testo nel formato
-//       info={"id":123,"tipo":"vari","default":"casuale","descrizione":"Titolo del test set"};
+//
+// nel file elenco-testi.js è presente la definizione del file
 //
 
 testo[a++]='Inserisci quì\n\

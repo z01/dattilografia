@@ -1,4 +1,3 @@
-info={"id":19,"tipo":"corso","default":"nuovo","descrizione":"Corso per tastiera Italiana 4"};
 testo[a++]='torrone traghetto torrone traghetto torrone traghetto torrone\ntorrone traghetto torrone traghetto torrone traghetto torrone';
 testo[a++]='ragazza pupazzo ragazza pupazzo ragazza pupazzo ragazza pupazzo\nragazza pupazzo ragazza pupazzo ragazza pupazzo ragazza pupazzo';
 testo[a++]='zucchero zattera zucchero zattera zucchero zattera zucchero\nzucchero zattera zucchero zattera zucchero zattera zucchero';

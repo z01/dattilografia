@@ -1,4 +1,3 @@
-info={"id":2,"tipo":"corso","default":"nuovo","descrizione":"Corso intermedio"};
 testo[a++]="saga ajar avail atlas anyway asthma antenna\r\nanalyst actuators auxiliary characters mainframe\r\nazaleas appear as alfalfa as allan amazes with\r\nabracadabra. admirals aboard a naval armada\r\naccurately analyze averages.";
 testo[a++]="bubonic blabber cobbler barb ebbs rabbi nabob\r\nbusboy bobbed bramble jobbers blubber barber\r\nbobbing bandbox backbone babbling bobbinet\r\nrabbits nibble by baby barbie while bumblebees buz\r\nnearby. blubbering robbers were blamable for\r\nbribery and barbarity.";
 testo[a++]="classic chicken conceit coca club catch check\r\ncrunch circus cascade comical cardiac cancel\r\ncalcium collect economic cucumber accuracy\r\ncec acclaims a concise concoction of cucumber and\r\nbroccoli. precise accrual accounting concerns\r\ncareful civic councils.";

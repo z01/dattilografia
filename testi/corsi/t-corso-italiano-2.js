@@ -1,4 +1,3 @@
-info={"id":17,"tipo":"corso","default":"nuovo","descrizione":"Corso per tastiera Italiana 2"};
 testo[a++]='AaSs DdFf AaSs DdFf AaSs DdFf AaSs DdFf AaSs DdFf AaSs DdFf AaSs\nAaSs DdFf AaSs DdFf AaSs DdFf AaSs DdFf AaSs DdFf AaSs DdFf AaSs';
 testo[a++]='GgHh JjKk GgHh JjKk GgHh JjKk GgHh JjKk GgHh JjKk GgHh JjKk GgHh\nGgHh JjKk GgHh JjKk GgHh JjKk GgHh JjKk GgHh JjKk GgHh JjKk GgHh';
 testo[a++]='LlEe IiGg LlEe IiGg LlEe IiGg LlEe IiGg LlEe IiGg LlEe IiGg LlEe\nLlEe IiGg LlEe IiGg LlEe IiGg LlEe IiGg LlEe IiGg LlEe IiGg LlEe';

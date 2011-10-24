@@ -2,7 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
-  <script src="res/endpage.js"></script>
 
 <meta http-equiv="Content-Language" content="it">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -10,17 +9,19 @@
 <link href="res/estilos.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body onload="document.FormCert.ppm.value=ppm;  document.FormCert.hora_server.value=hora_server;" >
+<body>
 
 <div id="cont">
 	<div class="contenido">
-<SCRIPT LANGUAGE="javascript" SRC="res/utils.js"> </SCRIPT>
+  <script src="res/endpage.js"></script>
+
+
+
 <SCRIPT LANGUAGE="javascript" SRC="res/fi_test-encr.js"> </SCRIPT>
-<script>
-  var testo={};
-  var a=0;
-</script>
-<SCRIPT LANGUAGE="javascript" SRC="testi.js"> </SCRIPT>
+<script>initializeCookies();</script>
+<script>getTexts();</script> 
+<script>showStats();</script> 
+<a href="testi.html">Elenco testi</a><br><br>
 
 <script>
 
@@ -86,7 +87,6 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
   document.write("Velocità media: "+(Math.round(curtest['caratteri']*60/curtest['tempo']))+" CPM<br>");
   document.write("Media errori: "+(round(curtest['errori']/curtest['terminati']))+" ("+(round(curtest['errori']*100/curtest['caratteri']))+"%)<br><br>");
   */
-  function clearCurStat(){ cookie['test'][info["id"]]={};setCookie(cookie);}
 
   cookie['test'][info["id"]]=curtest;
   setCookie(cookie);
@@ -135,8 +135,8 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
 
 <br><br>
 
-<script language="javascript">
 
+<script language="javascript">
     var i=testi;
     if (i>1) {
       document.write("<a href='index.html?1'><<</a> | ");
@@ -159,9 +159,7 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
 
 
     document.getElementById('linksucc').focus();
-
 </script>
-
 
 
 

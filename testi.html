@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
+
+<head>
+  <title>Elenco testi</title>
+  <link href="res/estilos.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="cont"><div class="contenido">
+
+
+    <script src="res/testipage.js"></SCRIPT>
+    <script>initializeCookies();</script>
+    <script>
+      var idx=0;
+      var table="";
+      var ctest=Array();
+      var tdesc,tchar,ttime,terrs,tterm,ttipo,tlast,tdef,td,std;
+      table+='<table cellspacing=0 cellpadding=0 border=1>';
+      table+='<tr><th>id</th><th>descrizione</th><th>tipologia</th><th>terminati</th><th>errori</th><th>cpm</th><th>avanz</th><th>&nbsp;</th></tr>';
+      for (idx=0;idx<numtesti;idx++){
+	tdesc=elencotesti[idx]["descrizione"];
+	ttipo=elencotesti[idx]["tipo"];
+	tdef=elencotesti[idx]["default"];
+
+	ctest=cookie['test'][idx]||{};
+
+	tchar=ctest["caratteri"]||0;
+	ttime=ctest["tempo"]||0;
+	terrs=ctest["errori"]||0;
+	tterm=ctest["terminati"]||0;
+	tlast=ctest["ultimo"]||0;
+	td=(cookie["curtest"]==idx)?"<th>":"<td>";
+	std=(cookie["curtest"]==idx)?"</th>":"</td>";
+	table+='<tr>';
+	table+=td+idx+std;
+	table+=td+'<a href="index.html" onclick="javascript:selectTesti('+idx+');">'+tdesc+'</a>&nbsp;'+std;
+	table+=td+ttipo+std;
+	table+=td+tterm+std;
+	table+=td+((tterm)?(round(terrs*100/tchar)+'%'):'<br>')+std;
+	table+=td+((tterm)?(Math.round(tchar*100/ttime)):'<br>')+std;
+	table+=td+((tterm)?((tdef=="nuovo")?tlast:'-'):'<br>')+std;
+	table+=td+((tterm)?('<i><a href="testi.html" onclick="javascript:clearStat('+idx+');">azzera</a></i>'):'<br>')+std;
+	table+='</tr>\n';
+      }
+      tchar=cookie["caratteri"]||0;
+      ttime=cookie["tempo"]||0;
+      terrs=cookie["errori"]||0;
+      tterm=cookie["terminati"]||0;
+      table+='<tr>';
+      table+='<th><br></th>';
+      table+='<th>Totali</th>';
+      table+='<th><br></th>';
+      table+='<th>'+tterm+'</th>';
+      table+='<th>'+((tterm)?(round(terrs*100/tchar)+'&nbsp;%'):'<br>')+'</th>';
+      table+='<th>'+((tterm)?(Math.round(tchar*100/ttime)):'<br>')+'</th>';
+      table+='<th><br></th>';
+      table+='<th>'+((tterm)?('<a href="testi.html" onclick="javascript:setCookie({});">azzera tutti</a>'):'<br>')+'</th>';
+      table+='</tr>\n';
+      table+='</table>';
+      print(table);
+    </script>
+
+</div></div>
+
+
+</body>
+</html>

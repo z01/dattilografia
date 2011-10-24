@@ -1,6 +1,3 @@
-info={"id":6,"tipo":"vari","default":"casuale","descrizione":"Test di dattilocorso"};
-
-
 testo[a++]='Leonardo da Vinci è stato un grande artista e scienziato italiano. Uomo\n\
 d\'ingegno e talento universale del Rinascimento italiano, incarnò in pieno\n\
 lo spirito universalista della sua epoca, portandolo alle maggiori forme di\n\

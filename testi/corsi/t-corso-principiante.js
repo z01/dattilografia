@@ -1,4 +1,3 @@
-info={"id":1,"tipo":"corso","default":"nuovo","descrizione":"Corso per principianti"};
 testo[a++]="jjj fff jjj fff jjj fff jj ff jjf ffj jjf fjf jfj\r\nfff jjj fff jjj fff jjj ff jj ffj jjf ffj jfj fjf\r\nfjj fjf jfj fjf fjfjj jjj jjf fffj fjf fjfjf jff";
 testo[a++]="ddd kkk ddd kkk ddd kkk dd kk ddk kkd ddk kdk dkd\r\nkkk ddd kkk ddd kkk ddd kk dd kkd ddk kkd dkd kdk\r\nkdk dk dkd kdd kk kddd dkdkd dkdkd kdkddd dkdkk d";
 testo[a++]="sss lll sss lll sss lll ss ll ssl lls ssl lsl sls\r\nlll sss lll sss lll sss ll ss lls ssl lls sls lsl\r\nssl slls lls lslslsl slss sllls sslls sl sllss ls";

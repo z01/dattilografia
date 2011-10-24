@@ -1,4 +1,3 @@
-info={"id":15,"tipo":"testo","default":"nuovo","descrizione":"Benvenuti"};
 testo[a++]='Benvenuto in dattilocorso 1.0';
 testo[a++]='Nelle prossime schermate trovi una presentazione e le istruzioni per l\'uso\n\
 Se vuoi passare direttamente alla videoscrittura\n\

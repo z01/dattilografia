@@ -1,5 +1,3 @@
-info={"id":10,"tipo":"vari","default":"casuale","descrizione":"Nomi di persona"};
-
 testo[a++]='Desdemona Palmazio Eva Casilda Erminio Ulpiano Romoaldo Corinna\n\
 Emidio Respicio Pippo Brigida Antero Venusta Candida Valfrido\n\
 Osanna Aza Siriano Cremenzio Iris Argimiro Asdrubale Lorenza\n\

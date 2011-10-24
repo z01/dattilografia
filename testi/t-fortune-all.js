@@ -1,5 +1,3 @@
-info={"id":8,"tipo":"vari","default":"casuale","descrizione":"Frasi di fortune"};
-
 testo[a++]='NON LASCIATEVI PRENDERE DAL PANICO.\n\
 Douglas Adams, "Guida Galattica per gli Autostoppisti"';
 

@@ -1,5 +1,3 @@
-info={"id":12,"tipo":"vari","default":"casuale","descrizione":"Comandi di sistema"};
-
 testo[a++]='cut chown cat truncate true tty dirname id df stat mknod seq echo\n\
 sort who stdbuf split pwd stty rm uniq cp chmod cksum pr chcon users\n\
 unexpand touch shred sha256sum sum yes tr fmt chroot ln dir tsort\n\

@@ -1,5 +1,3 @@
-info={"id":14,"tipo":"vari","default":"casuale","descrizione":"Caratteri pseudocasuali"};
-
 testo[a++]='fudsayhf asihfao aufh sapovjbsna fiksjhf asfkj hs flkja bas\n\
 d faskhfbasf kjsnfsal fjfsn lkashfb slkfj slkfj nsa flsikja\n\
 ofaiskjf nslkadf jsnf lsafkjn sljfns lfkjsn vsldkjf nasdlvka\n\

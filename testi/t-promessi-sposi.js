@@ -1,5 +1,3 @@
-info={"id":20,"tipo":"testo","default":"nuovo","descrizione":"Promessi Sposi"};
-
 testo[a++]="\
 Quel ramo del lago di Como, che volge a mezzogiorno, tra due catene non\n\
 interrotte di monti, tutto a seni e a golfi, a seconda dello sporgere\n\

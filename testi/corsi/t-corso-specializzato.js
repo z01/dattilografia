@@ -1,4 +1,3 @@
-info={"id":4,"tipo":"corso","default":"nuovo","descrizione":"Corso specializzato"};
 testo[a++]="aoeu ueoa aoeui snth htns snthd uihd uihd\nasonetuhid asonetuhid dihutenosa dihutenosa";
 testo[a++]="a s o n e t u h i d a s o n e t u h i d";
 testo[a++]="d i h u t e n o s a d i h u t e n o s a";

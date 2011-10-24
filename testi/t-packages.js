@@ -1,5 +1,3 @@
-info={"id":11,"tipo":"vari","default":"casuale","descrizione":"Pacchetti Slackware"};
-
 testo[a++]='ConsoleKit (user, login, and seat tracking framework)\n\
 ConsoleKit is a framework for defining and tracking users, login\n\
 sessions, and seats.\n\

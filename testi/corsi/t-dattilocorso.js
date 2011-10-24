@@ -1,5 +1,3 @@
-info={"id":5,"tipo":"corso","default":"nuovo","descrizione":"Dattilocorso"};
-
 testo[a++]='jjjj kkkk llll тттт aaaa ssss dddd ffff тттт llll kkkk jjjj\n\
 ffff dddd ssss aaaa тттт aaaa llll ssss kkkk dddd jjjj ffff\n\
 aajj sskk ddll ffтт jjaa kkss lldd ттff ттaa llss kkdd jjff\n\

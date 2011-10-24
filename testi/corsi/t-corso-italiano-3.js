@@ -1,4 +1,3 @@
-info={"id":18,"tipo":"corso","default":"nuovo","descrizione":"Corso per tastiera Italiana 3"};
 testo[a++]='vvbb bbvv vvbb bbvv vvbb bbvv vvbb bbvv vvbb bbvv vvbb bbvv vvbb\nvvbb bbvv vvbb bbvv vvbb bbvv vvbb bbvv vvbb bbvv vvbb bbvv vvbb';
 testo[a++]='vbvb bvbv vbvb bvbv vbvb bvbv vbvb bvbv vbvb bvbv vbvb bvbv vbvb\nvbvb bvbv vbvb bvbv vbvb bvbv vbvb bvbv vbvb bvbv vbvb bvbv vbvb';
 testo[a++]='vbbv bvvb vbbv bvvb vbbv bvvb vbbv bvvb vbbv bvvb vbbv bvvb vbbv\nvbbv bvvb vbbv bvvb vbbv bvvb vbbv bvvb vbbv bvvb vbbv bvvb vbbv';

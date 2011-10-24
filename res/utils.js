@@ -34,6 +34,10 @@ function setCookie(value) {
   var c_value=escape(serialize(value)) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
   document.cookie=c_name + "=" + c_value;
 }
+function selectTesti(id){
+  cookie["curtest"]=id;
+  setCookie(cookie);
+}
 function encripta(Str_Message) {
   Len_Str_Message=Str_Message.length;
   Str_Encrypted_Message="";
@@ -55,3 +59,43 @@ function desencripta(Str_Message) {
   } 
   return(Str_Encrypted_Message);
 }
+function print(str){
+  document.write(str);
+}
+function initializeCookies(){
+  cookie=getCookie();
+  if(!cookie)cookie={};
+  cookie['curtest']=cookie['curtest']||0;
+  cookie['terminati']=cookie['terminati']||0;
+  cookie['caratteri']=cookie['caratteri']||0;
+  cookie['tempo']=cookie['tempo']||0;
+  cookie['errori']=cookie['errori']||0;
+  tests=cookie['test']; 
+  if(!tests) { tests={}; cookie['test']=tests; }
+  info=elencotesti[cookie['curtest']];
+  curtest=tests[info["id"]]||{};
+  curtest['terminati']=curtest['terminati']||0;
+  curtest['caratteri']=curtest['caratteri']||0;
+  curtest['tempo']=curtest['tempo']||0;
+  curtest['errori']=curtest['errori']||0;
+  curtest['ultimo']=curtest['ultimo']||0;
+  cookie['test'][info["id"]]=curtest;                                                                                                                 
+  setCookie(cookie);                                                                                                                                  
+}   
+function clearCurStat(){
+  cookie['test'][info["id"]]={};
+  setCookie(cookie);
+}
+function clearStat(id){
+  cookie['test'][id]={};
+  setCookie(cookie);
+}
+function getTexts(){
+  document.write('<script src="testi/'+info['file']+'"></script>');
+}
+function round (n) {
+  n = Math.round(n * 100) / 100;
+  n = (n + 0.001) + '';
+  return n.substring(0, n.indexOf('.') + 3);
+}
+
