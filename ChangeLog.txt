@@ -19,3 +19,5 @@
 	Selezione testi e visualizzazione statistiche completamente da browser
 	Ignora i doppi errori sulla stessa lettera
 
+25/10/2011: ver 2.0.1
+	fix include file
