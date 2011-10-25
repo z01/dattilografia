@@ -20,8 +20,7 @@
 <SCRIPT LANGUAGE="javascript" SRC="res/fi_test-encr.js"> </SCRIPT>
 <script>initializeCookies();</script>
 <script>getTexts();</script> 
-<script>showStats();</script> 
-<a href="testi.html">Elenco testi</a><br><br>
+<a href="index.html">Elenco testi</a><br><br>
 
 <script>
 
@@ -66,11 +65,11 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
 
   document.write("Terminati per "+info["descrizione"]+": "+curtest['terminati']); 
   if(curtest['terminati'] > 0) document.write(" ("+(Math.round(curtest['caratteri']*60/curtest['tempo']))+" CPM - "+(Math.round(curtest['errori']*10000/curtest['caratteri'])/100)+"% errori)");
-  document.write(' <a href="index.html" onclick="javascript:clearCurStat();">Azzera</a><br>');
+  document.write(' <a href="test.html" onclick="javascript:clearCurStat();">Azzera</a><br>');
 
   document.write("Totali testi terminati: "+cookie['terminati']); 
   document.write(" ("+(Math.round(cookie['caratteri']*60/cookie['tempo']))+" CPM - "+(Math.round(cookie['errori']*10000/cookie['caratteri'])/100)+"% errori)");
-  document.write(' <a href="index.html" onclick="javascript:setCookie({});">Azzera tutto</a>');
+  document.write(' <a href="test.html" onclick="javascript:setCookie({});">Azzera tutto</a>');
   document.write("<br><br>");
 
 
@@ -103,31 +102,31 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
     setCookie(cookie);
   }
   if (perrors >=3) {
-    document.write("<a href='index.html?"+testi+"' id='linksucc'><b>Ripetere il test</b></a> (consigliato)<br>");
+    document.write("<a href='test.html?"+testi+"' id='linksucc'><b>Ripetere il test</b></a> (consigliato)<br>");
     if (info["tipo"]=="vari"){
-      document.write("<a href='index.html'>Vai a un'altro test</a><br>");
+      document.write("<a href='test.html'>Vai a un'altro test</a><br>");
     }else{
-      if(curtest['ultimo']<testi) document.write("<a href='index.html?"+(testi*1+1)+"'>Vai a successivo</a><br>");
+      if(curtest['ultimo']<testi) document.write("<a href='test.html?"+(testi*1+1)+"'>Vai a successivo</a><br>");
       if(curtest['ultimo']>=a){
 	document.write("<h2>Complimenti, hai terminato tutti i test di "+info["descrizione"]+"</h2>");
       }else{
-	document.write("<a href='index.html'>Vai a nuovo</a><br>");
+	document.write("<a href='test.html'>Vai a nuovo</a><br>");
       }
-      document.write("<a href='index.html' onclick='javascript:resetCookiePos()'>Comincia da capo</a><br>");
+      document.write("<a href='test.html' onclick='javascript:resetCookiePos()'>Comincia da capo</a><br>");
     }
   }else{
     if (info["tipo"]=="vari"){
-      document.write("<a href='index.html' id='linksucc'><b>Vai a un'altro test</b></a><br>");
+      document.write("<a href='test.html' id='linksucc'><b>Vai a un'altro test</b></a><br>");
     }else{
-      if(curtest['ultimo']>testi) document.write("<a href='index.html?"+(testi*1+1)+"'>Vai a successivo</a><br>");
+      if(curtest['ultimo']>testi) document.write("<a href='test.html?"+(testi*1+1)+"'>Vai a successivo</a><br>");
       if(curtest['ultimo']>=a){
 	document.write("<h2>Complimenti, hai terminato tutti i test di "+info["descrizione"]+"</h2>");
       }else{
-	document.write("<a href='index.html' id='linksucc'><b>Vai a nuovo</b></a><br>");
+	document.write("<a href='test.html' id='linksucc'><b>Vai a nuovo</b></a><br>");
       }
-      document.write("<a href='index.html' onclick='javascript:resetCookiePos()'>Comincia da capo</a><br>");
+      document.write("<a href='test.html' onclick='javascript:resetCookiePos()'>Comincia da capo</a><br>");
     }
-    document.write("<a href='index.html?"+testi+"'>Ripetere il test</a><br>");
+    document.write("<a href='test.html?"+testi+"'>Ripetere il test</a><br>");
   }
 
 
@@ -139,18 +138,18 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
 <script language="javascript">
     var i=testi;
     if (i>1) {
-      document.write("<a href='index.html?1'><<</a> | ");
-      document.write("<a href='index.html?"+(i-1)+"'><</a> | ");
+      document.write("<a href='test.html?1'><<</a> | ");
+      document.write("<a href='test.html?"+(i-1)+"'><</a> | ");
     }else{
       document.write("<< | ");
       document.write("< | ");
     }
 
-    document.write("<b><a href='index.html?"+i+"'>#"+i+"</a></b>");
+    document.write("<b><a href='test.html?"+i+"'>#"+i+"</a></b>");
     if (i<a){
       i++;
-      document.write(" | <a href='index.html?"+i+"'>></a>");
-      document.write(" | <a href='index.html?"+a+"'>>></a>");
+      document.write(" | <a href='test.html?"+i+"'>></a>");
+      document.write(" | <a href='test.html?"+a+"'>>></a>");
       i--;
     }else{
       document.write(" | >");

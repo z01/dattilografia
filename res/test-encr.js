@@ -27,12 +27,13 @@ function analitza_resultat(errors) {
   var segons=hora_fi-hora_inici;
   var canvi_de_dia=0;
   if (errors<0) errors=0;
+  if (segons==0) segons=1;
   if (segons<1) { segons=segons+86400; canvi_de_dia=1; }
   if (paste_utilitzat==1) segons=10000;
   variables_a_encriptar="x="+errors+"&l="+longitud+"&s="+segons+"&h="+hora_servidor+"&t="+testi+"&a="+encripta(serialize(allerrors))+"&";
   variables_encriptades=encripta(variables_a_encriptar);
   checksum=calcula_checksum(variables_encriptades);
-  location="fi_test.html?v="+variables_encriptades+"&w="+checksum+"&";
+  location="endpage.html?v="+variables_encriptades+"&w="+checksum+"&";
 }
 function CheckKey(event) {
   if (navigator.appName != 'Netscape') {

@@ -2,100 +2,67 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
-<title>Test di velocità</title>
-<link href="res/estilos.css" rel="stylesheet" type="text/css" />
+  <title>Elenco testi</title>
+  <link href="res/estilos.css" rel="stylesheet" type="text/css" />
 </head>
+<body>
+<div id="cont"><div class="contenido">
 
 
-<body onload="document.getElementById('S1').focus(); escrit_inicial();">
+    <script src="res/testipage.js"></SCRIPT>
+    <script>initializeCookies();</script>
+    <script>
+      var idx=0;
+      var table="";
+      var ctest=Array();
+      var tdesc,tchar,ttime,terrs,tterm,ttipo,tlast,tdef,td,std;
+      table+='<table cellspacing=0 cellpadding=0 border=1>';
+      table+='<tr><th>id</th><th>descrizione</th><th>tipologia</th><th>terminati</th><th>errori</th><th>cpm</th><th>avanz</th><th>&nbsp;</th></tr>';
+      for (idx=0;idx<numtesti;idx++){
+	tdesc=elencotesti[idx]["descrizione"];
+	ttipo=elencotesti[idx]["tipo"];
+	tdef=elencotesti[idx]["default"];
 
-<div id="cont">
-	<div class="contenido">
+	ctest=cookie['test'][idx]||{};
 
-<script src="res/testpage.js"></SCRIPT>
-<script>initializeCookies();</script>
-<script>getTexts();</script> 
-<script> showStats(); </script>
+	tchar=ctest["caratteri"]||0;
+	ttime=ctest["tempo"]||0;
+	terrs=ctest["errori"]||0;
+	tterm=ctest["terminati"]||0;
+	tlast=ctest["ultimo"]||0;
+	td=(cookie["curtest"]==idx)?"<th>":"<td>";
+	std=(cookie["curtest"]==idx)?"</th>":"</td>";
+	table+='<tr>';
+	table+=td+idx+std;
+	table+=td+'<a href="test.html" onclick="javascript:selectTesti('+idx+');">'+tdesc+'</a>&nbsp;'+std;
+	table+=td+ttipo+std;
+	table+=td+tterm+std;
+	table+=td+((tterm)?(round(terrs*100/tchar)+'%'):'<br>')+std;
+	table+=td+((tterm)?(Math.round(tchar*60/ttime)):'<br>')+std;
+	table+=td+((tterm)?((tdef=="nuovo")?tlast:'-'):'<br>')+std;
+	table+=td+((tterm)?('<i><a href="index.html" onclick="javascript:clearStat('+idx+');">azzera</a></i>'):'<br>')+std;
+	table+='</tr>\n';
+      }
+      tchar=cookie["caratteri"]||0;
+      ttime=cookie["tempo"]||0;
+      terrs=cookie["errori"]||0;
+      tterm=cookie["terminati"]||0;
+      table+='<tr>';
+      table+='<th><br></th>';
+      table+='<th>Totali</th>';
+      table+='<th><br></th>';
+      table+='<th>'+tterm+'</th>';
+      table+='<th>'+((tterm)?(round(terrs*100/tchar)+'%'):'<br>')+'</th>';
+      table+='<th>'+((tterm)?(Math.round(tchar*60/ttime)):'<br>')+'</th>';
+      table+='<th><br></th>';
+      table+='<th>'+((tterm)?('<a href="index.html" onclick="javascript:setCookie({});">azzera tutti</a>'):'<br>')+'</th>';
+      table+='</tr>\n';
+      table+='</table>';
+      print(table);
+    </script>
 
-<SCRIPT>
-var i;
-if (document.URL.indexOf("?")==-1){
-  if(info['default']=="nuovo"){
-    i=curtest['ultimo']*1+1;
-  }else{
-    i=Math.floor(Math.random()*testo.length+1);
-  }
-}else{
-  i=document.URL.substr(document.URL.indexOf("?")+1);
-  if (i=="") if(info['default']=="nuovo"){
-      i=curtest['ultimo']*1+1;
-    }else{
-      i=Math.floor(Math.random()*testo.length+1);
-    }
-}
-var texte=testo[i-1].replace(/\r/g,'').replace(/\n/g,'<br>');
-var hora_servidor="2000-01-01 00:00:00";
-</SCRIPT>
-
-<SCRIPT LANGUAGE="javascript" SRC="res/test-encr.js"> </SCRIPT>
-<a href="testi.html">Elenco testi</a><br><br>
-<SCRIPT LANGUAGE="javascript">
-  document.write("<U><B>"+info["descrizione"]+" (#"+i+"/"+a+")</B></U><BR><BR>");
-var testi=i;
-if (i>1) {
-  document.write("<a href='?1'><<</a> | ");
-  document.write("<a href='?"+(i-1)+"'><</a> | ");
-}else{
-  document.write("<< | ");
-  document.write("< | ");
-}
-document.write("<b><a href='?"+i+"'>#"+i+"</a></b>");
-if (i<testo.length){
-  i++;
-  document.write(" | <a href='?"+i+"'>></a>");
-  document.write(" | <a href='?"+testo.length+"'>>></a>");
-  i--;
-}else{
-  document.write(" | >");
-  document.write(" | >>");
-}
-if(info['default']=="casuale"){
-  document.write(" | <a href='index.html'><i>casuale</i></a>");
-}else{
-  document.write(" | <a href='index.html'><i>continua lezioni</i></a>");
-}
-</SCRIPT>
-<br />
-
-<br /><br />
-Digita il seguente testo ...
-<br /><br />
-
-<span id="clock"></span><br><br>
-errori: <span id="errs">0 (0%)</span> - CPM: <span id="cpm">0</span>
-<form  method="POST" id="formul">
-<p><textarea rows="10" id="S1" name="S1"  cols="80" oninput="javascript:checkPasteFF();" onpaste="return false" onKeyDown="CheckKey(event)" onKeyUp="this.value=Comprova_ok(this.value,event)" ;></textarea></p>
-</form>
-
-<SCRIPT>
-var paste_utilitzat=0;
-var charCount = document.getElementById("S1").value.length;
-function checkPasteFF(methodToCall) {
-	newCharCount = document.getElementById("S1").value.length;
-	oldCharCount = charCount;	
-	charCount = newCharCount;
-	if(newCharCount - oldCharCount > 1) {
-		paste_utilitzat=1;
-		location="test-ko.html";
-	}
-}
-</SCRIPT>
-
-	</div>
-</div>
-
+</div></div>
 
 
 </body>
 </html>
-
