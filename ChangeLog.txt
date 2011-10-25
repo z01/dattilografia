@@ -14,3 +14,8 @@
 	Aggiunto testo t-promessi-sposi.js
 	Aggiunto corso t-corso-italiano*
 
+25/10/2011: ver 2.0
+	fix varie
+	Selezione testi e visualizzazione statistiche completamente da browser
+	Ignora i doppi errori sulla stessa lettera
+

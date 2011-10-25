@@ -33,15 +33,14 @@ testo[a++]='Se il tuo testo ha simboli di\n\
 maggiore o minore omettili perché al programma\n\
 gli da fastidio';
 
-testo[a++]='Il testo deve iniziare con una riga\n\
-contenente le informazioni sul testo.\n\
+testo[a++]='In testi/elenco-testi.js inserisci l\'intestazione del testo\n\
 id è un numero univoco\n\
 tipo è la tipologia di testo ("corso","vari","testo")\n\
 default indica quale testo utilizzare in caso non ne\n\
 venga specificato uno ("nuovo","casuale")\n\
 descrizione è un titolo per il testo.\n\
 Esempio:\n\
-info={"id":123,"tipo":"vari","default":"casuale","descrizione":"Testi vari"};';
+elencotesti[123]={"file":"t-esempio.js":"id":123,"tipo":"vari","default":"casuale","descrizione":"Testi vari"};';
 
 testo[a++]='Il nome del file deve avere come\n\
 prefisso \'t-\' e come estensione\n\

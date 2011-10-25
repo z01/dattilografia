@@ -109,6 +109,7 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
       if(curtest['ultimo']<testi) document.write("<a href='test.html?"+(testi*1+1)+"'>Vai a successivo</a><br>");
       if(curtest['ultimo']>=a){
 	document.write("<h2>Complimenti, hai terminato tutti i test di "+info["descrizione"]+"</h2>");
+	document.write("<a href='index.html' id='linksucc'>Scegli un altro testo</a><br>");
       }else{
 	document.write("<a href='test.html'>Vai a nuovo</a><br>");
       }
@@ -121,6 +122,7 @@ if ( (ppm>650) || (cadena_checksum != calcul_checksum) ) { window.location="test
       if(curtest['ultimo']>testi) document.write("<a href='test.html?"+(testi*1+1)+"'>Vai a successivo</a><br>");
       if(curtest['ultimo']>=a){
 	document.write("<h2>Complimenti, hai terminato tutti i test di "+info["descrizione"]+"</h2>");
+	document.write("<a href='index.html' id='linksucc'>Scegli un altro testo</a><br>");
       }else{
 	document.write("<a href='test.html' id='linksucc'><b>Vai a nuovo</b></a><br>");
       }
