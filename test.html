@@ -74,7 +74,12 @@ Digita il seguente testo ...
 <span id="clock"></span><br><br>
 errori: <span id="errs">0 (0%)</span> - CPM: <span id="cpm">0</span>
 <form  method="POST" id="formul">
-<p><textarea rows="10" id="S1" name="S1"  cols="80" oninput="javascript:checkPasteFF();" onpaste="return false" onKeyDown="CheckKey(event)" onKeyUp="this.value=Comprova_ok(this.value,event)" ;></textarea></p>
+  <p>
+  <script>
+    print('<textarea rows="'+(texte.match(/<br>/g).length)+'" id="S1" name="S1"  cols="80" oninput="javascript:checkPasteFF();" onpaste="return false" onKeyDown="CheckKey(event)" onKeyUp="this.value=Comprova_ok(this.value,event)" ;></textarea><br>');
+    document.write("<i><a href='?"+i+"'>ripeti questo test</a></i>");
+  </script>
+  </p>
 </form>
 
 <SCRIPT>

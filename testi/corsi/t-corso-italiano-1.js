@@ -1,13 +1,21 @@
 testo[a++]='ffff jjjj ffff jjjj ffff jjjj ffff jjjj ffff jjjj ffff jjjj ffff\nffff jjjj ffff jjjj ffff jjjj ffff jjjj ffff jjjj ffff jjjj ffff';
 testo[a++]='ffjj jjff ffjj jjff ffjj jjff ffjj jjff ffjj jjff ffjj jjff ffjj\nffjj jjff ffjj jjff ffjj jjff ffjj jjff ffjj jjff ffjj jjff ffjj';
 testo[a++]='fjfj jfjf fjfj jfjf fjfj jfjf fjfj jfjf fjfj jfjf fjfj jfjf fjfj\nfjfj jfjf fjfj jfjf fjfj jfjf fjfj jfjf fjfj jfjf fjfj jfjf fjfj';
+
 testo[a++]='dddd kkkk dddd kkkk dddd kkkk dddd kkkk dddd kkkk dddd kkkk dddd\ndddd kkkk dddd kkkk dddd kkkk dddd kkkk dddd kkkk dddd kkkk dddd';
-testo[a++]='ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk\nddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk';
+testo[a++]='ddkk kkdd ddkk kkdd ddkk kkdd ddkk kkdd ddkk kkdd ddkk kkdd ddkk\nddkk kkdd ddkk kkdd ddkk kkdd ddkk kkdd ddkk kkdd ddkk kkdd ddkk';
+//testo[a++]='ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk\nddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk dkaт ddkk';
 testo[a++]='dkdk kdkd dkdk kdkd dkdk kdkd dkdk kdkd dkdk kdkd dkdk kdkd dkdk\ndkdk kdkd dkdk kdkd dkdk kdkd dkdk kdkd dkdk kdkd dkdk kdkd dkdk';
+
 testo[a++]='ssss llll ssss llll ssss llll ssss llll ssss llll ssss llll ssss\nssss llll ssss llll ssss llll ssss llll ssss llll ssss llll ssss';
 testo[a++]='ssll llss ssll llss ssll llss ssll llss ssll llss ssll llss ssll\nssll llss ssll llss ssll llss ssll llss ssll llss ssll llss ssll';
+testo[a++]='slsl lsls slsl lsls slsl lsls slsl lsls slsl lsls slsl lsls slsl\nslsl lsls slsl lsls slsl lsls slsl lsls slsl lsls slsl lsls slsl';
+
 testo[a++]='aaaa тттт aaaa тттт aaaa тттт aaaa тттт aaaa тттт aaaa тттт aaaa\naaaa тттт aaaa тттт aaaa тттт aaaa тттт aaaa тттт aaaa тттт aaaa';
-testo[a++]='aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт\naaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт';
+testo[a++]='aaтт ттaa aaтт ттaa aaтт ттaa aaтт ттaa aaтт ттaa aaтт ттaa aaтт\naaтт ттaa aaтт ттaa aaтт ттaa aaтт ттaa aaтт ттaa aaтт ттaa aaтт';
+//testo[a++]='aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт\naaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт aaтт';
+testo[a++]='aтaт тaтa aтaт тaтa aтaт тaтa aтaт тaтa aтaт тaтa aтaт тaтa aтaт\naтaт тaтa aтaт тaтa aтaт тaтa aтaт тaтa aтaт тaтa aтaт тaтa aтaт';
+
 testo[a++]='dada sasa dada sasa dada sasa dada sasa dada sasa dada sasa dada\ndada sasa dada sasa dada sasa dada sasa dada sasa dada sasa dada';
 testo[a++]='lada fada lada fada lada fada lada fada lada fada lada fada lada\nlada fada lada fada lada fada lada fada lada fada lada fada lada';
 testo[a++]='kasa jтjт kasa jтjт kasa jтjт kasa jтjт kasa jтjт kasa jтjт kasa\nkasa jтjт kasa jтjт kasa jтjт kasa jтjт kasa jтjт kasa jтjт kasa';
